@@ -26,6 +26,9 @@ ascii_art='
 
 echo -e "$ascii_art"
 
+#!/bin/bash
+
+# Perguntar se o usuário quer continuar
 read -p "Do you want continue? (y/n): " answer
 if [[ ! "$answer" =~ ^[Yy]$ ]]; then
   echo "Operação cancelada."
@@ -34,7 +37,7 @@ fi
 
 set -e
 
-# Installing Nix
+# Instalando Nix, caso não esteja instalado
 if ! command -v nix &>/dev/null; then
   echo "Installing Nix..."
   sh <(curl -L https://nixos.org/nix/install) --no-daemon
@@ -42,11 +45,16 @@ else
   echo "Nix is already installed."
 fi
 
-# Installing programs from Nix
-echo "Starting development setup..."
-sudo nixos-rebuild switch -I nixos-config=nix/configuration.nix
+# Instalar pacotes do arquivo packages.nix
+if [[ -f config/packages.nix ]]; then
+  echo "Installing packages from packages.nix..."
+  nix-env -f config/packages.nix -iA $(nix-instantiate --eval -E 'import ./config/packages.nix' | jq -r '.[]')
+else
+  echo "No package list found."
+fi
 
-# Configuring programs
+# Configurando programas
+echo "Configuring programs..."
 for script in config/*.sh; do
   if [[ -f "$script" ]]; then
     echo "Configuring $script"
