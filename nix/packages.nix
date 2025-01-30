@@ -9,4 +9,5 @@ with import <nixpkgs> {};
     mise
     gcc
     lazygit
+    lazydocker
 ]
