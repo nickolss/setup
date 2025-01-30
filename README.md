@@ -13,6 +13,7 @@ O script instala os seguintes pacotes via **Nix**:
 - **Mise**: Ferramenta para automatizar builds.
 - **GCC**: Compilador GNU.
 - **Lazygit**: TUI para comandos git
+- Lazydocker: TUI para comandos docker 
 
 ## 🚀 Como usar
 
