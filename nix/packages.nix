@@ -8,4 +8,5 @@ with import <nixpkgs> {};
     htop 
     mise
     gcc
+    lazygit
 ]
