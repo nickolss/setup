@@ -4,9 +4,8 @@ with import <nixpkgs> {};
     wget
     neovim
     git
-    zoxide # best cd command
+    zoxide
     htop 
     mise
     gcc
-    docker
 ]
