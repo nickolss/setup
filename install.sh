@@ -22,4 +22,4 @@ for script in config/*.sh; do
   fi
 done
 
-echo "Finish him"
+echo "Restart the system for the changes to take effect"
