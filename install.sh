@@ -45,12 +45,17 @@ else
   echo "Nix is already installed."
 fi
 
-# Instalar pacotes do arquivo packages.nix
-if [[ -f config/packages.nix ]]; then
-  echo "Installing packages from packages.nix..."
-  nix-env -f config/packages.nix -iA $(nix-instantiate --eval -E 'import ./config/packages.nix' | jq -r '.[]')
-else
-  echo "No package list found."
+# Instalando pacotes do arquivo packages.nix
+if [[ -f nix/packages.nix ]]; then
+  echo "Installing packages from nix/packages.nix..."
+
+  # Faz um regex para pegar apenas o nome dos arquvos dentro de []
+  packages=($(cat nix/packages.nix | sed -n '/\[/,/\]/p' | grep -oP '\s*\K\w+'))
+
+  # Instalar pacotes
+  for package in "${packages[@]}"; do
+    nix-env -iA nixpkgs.$package
+  done
 fi
 
 # Configurando programas
