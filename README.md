@@ -12,6 +12,7 @@ O script instala os seguintes pacotes via **Nix**:
 - **Zoxide**: Navegador de diretórios em linha de comando.
 - **Mise**: Ferramenta para automatizar builds.
 - **GCC**: Compilador GNU.
+- **Lazygit**: TUI para comandos git
 
 ## 🚀 Como usar
 
