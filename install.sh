@@ -5,7 +5,7 @@ set -e
 # Installing Nix
 if ! command -v nix &>/dev/null; then
   echo "Installing Nix..."
-  sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  sh <(curl -L https://nixos.org/nix/install) --daemon
 else
   echo "Nix is already installed."
 fi
