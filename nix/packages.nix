@@ -10,4 +10,5 @@ with import <nixpkgs> {};
     gcc
     lazygit
     lazydocker
+    docker
 ]
