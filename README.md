@@ -7,6 +7,7 @@ Este repositório visa automatizar o setup de um ambiente de desenvolvimento uti
 O script instala os seguintes pacotes via **Nix**:
 
 - **Neovim**: Editor de texto altamente configurável e extensível.
+- **Fzf**: Ferramenta de fuzzy para encontrar arquivos no terminal
 - **htop**: Monitor de sistema interativo.
 - **Git**: Sistema de controle de versão distribuído.
 - **Zoxide**: Navegador de diretórios em linha de comando.

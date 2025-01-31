@@ -11,4 +11,5 @@ with import <nixpkgs> {};
     lazygit
     lazydocker
     docker
+    fzf
 ]
