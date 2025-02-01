@@ -22,7 +22,6 @@ O script instala os seguintes pacotes via **Nix**:
 ### Requisitos
 
 - Distribuição baseada no **Arch Linux**.
-- AUR helper **yay** instalado.
 
 ### Passos para Rodar o Script
 
