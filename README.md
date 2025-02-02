@@ -16,6 +16,7 @@ O script instala os seguintes pacotes via **Nix**:
 - **Git**: Sistema de controle de versão distribuído.
 - **Mise**: Ferramenta para automatizar builds.
 - **Docker**: Ferramenta de manipulação de containers.
+- **Zoxide**: Uma alternativa ao cd que aprende os diretórios que você acessa com mais frequência e permite navegar rapidamente entre eles.
 
 ## 🚀 Como usar
 
