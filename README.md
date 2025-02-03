@@ -4,11 +4,11 @@ Este repositório visa automatizar o setup de um ambiente de desenvolvimento uti
 
 ## ⚠️ Compatibilidade
 
-Este script é projetado **exclusivamente** para distribuições baseadas no **Arch Linux**. Se sua distribuição não for baseada no Arch, o funcionamento não é garantido.
+Este script é projetado **exclusivamente** para distribuições baseadas no **Arch Linux**. Se sua distribuição não for baseada no Arch, o script não funcionará.
 
 ## 📦 Ferramentas Instaladas
 
-O script instala os seguintes pacotes via **Nix**:
+O script instala os seguintes pacotes via **[yay](https://github.com/Jguer/yay)**:
 
 - **Neovim**: Editor de texto altamente configurável e extensível.
 - **Fzf**: Ferramenta de fuzzy para encontrar arquivos no terminal.
