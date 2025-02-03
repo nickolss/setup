@@ -39,20 +39,39 @@ set -e
 # Instalando yay se não estiver instalado
 if ! command -v yay &>/dev/null; then
   echo "Yay is not installed, installing yay..."
-  sudo pacman -S --needed --noconfirm git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+  sudo pacman -S --needed --noconfirm git base-devel
+  git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd ..
   # Remover o diretório yay após a instalação
-  rm -rf "$PWD/yay"
+  rm -rf yay
 else
   echo "Yay is already installed."
 fi
 
-# Iniciando instalação dos aplicativos
-for app in apps/*.sh; do
-  # Verifica se o arquivo existe antes de tentar executá-lo
-  if [[ -f "$app" ]]; then
-    echo "Installing $app"
-    bash "$app"
-  else
-    echo "No scripts found in apps/"
-  fi
-done
+# Instala o gum
+yay -S --needed gum --noconfirm
+
+# Exibe menu interativo
+choice=$(gum choose "📟 Apenas Terminal" "🖥️ Terminal + Gráficos")
+
+case "$choice" in
+  "📟 Apenas Terminal")
+  echo "Installing terminal apps..."
+  source terminal.sh
+  ;;
+
+  "🖥️ Terminal + Gráficos")
+  echo "Installing terminal and GUI apps..."
+  source terminal.sh
+  source graphical.sh
+  ;;
+
+  *)
+  echo "Invalid Option. Exiting..."
+  exit 1
+  ;;
+esac
+
+# Aplica as modificações feitas no bashrc
+source ~/.bashrc
+
+echo "✅ Installation completed!"
