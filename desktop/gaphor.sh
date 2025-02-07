@@ -1,1 +1,1 @@
-flatpak install flathub org.gaphor.Gaphor
+flatpak install -y flathub org.gaphor.Gaphor

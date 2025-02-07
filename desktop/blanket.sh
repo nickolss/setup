@@ -1,1 +1,1 @@
-flatpak install flathub com.rafaelmardojai.Blanket
+flatpak install -y flathub com.rafaelmardojai.Blanket
